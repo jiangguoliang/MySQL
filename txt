@@ -1,8 +1,10 @@
-SQL语句：
+实例一：
 
-SELECT xxx FROM tabel WHERE EventClass=162 AND StartTime >= '2018-06-27 00:00:00' ORDER BY StartTime DESC LIMIT 0,1000
+SQL语句：
+SELECT xxx FROM tabel WHERE EventClass=162 AND StartTime >= '2018-06-27 00:00:00' ORDER BY StartTime DESC LIMIT 0,100
 
 无索引耗时：2.750sec 2.822sec  2.797sec（分别三次执行）
 单一索引耗时：（EventClass) 2.125sec 2.016sec 1.921sec（分别三次执行）
 多个单一索引耗时：（EventClass,StartTime) 1.578sec 1.578sec 1.672sec（分别三次执行）
 组合索引耗时：(EventClass,StartTime) 0.109sec 0.00sec 0.00sec （分别三次执行）
+
